@@ -22,5 +22,18 @@ after_success:
   - docker push giuliaculoma/multi-server
   - docker push giuliaculoma/multi-worker
 
+  deploy:
+    provider: elasticbeanstalk
+    region: eu-north-1 #example 
+    app: multi-docker
+    env: Multidocker-env
+    bucket_name: #??
+    bucket_path: docker-multi
+    on:
+      branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+
+
 
 
