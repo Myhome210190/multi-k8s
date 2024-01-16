@@ -14,4 +14,13 @@ after_success:
   - docker build -t giuliaculoma/multi-server ./server
   - docker build -t giuliaculoma/multi-worker ./worker
 
+  # Log in to docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # take images and push them to Docker hub 
+  - docker push giuliaculoma/multi-client
+  - docker push giuliaculoma/multi-nginx
+  - docker push giuliaculoma/multi-server
+  - docker push giuliaculoma/multi-worker
+
+
 
