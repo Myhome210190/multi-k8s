@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t giuliaculoma/react-test -f ./client/Dockerfile ./client
+  - docker build -t giuliaculoma/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true USERNAME/react-test npm test
+  - docker run -e CI=true giuliaculoma/react-test npm test
 
 after_success:
   - docker build -t giuliaculoma/multi-client ./client
