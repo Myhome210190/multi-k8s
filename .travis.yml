@@ -8,9 +8,9 @@ env:
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get install python3.10
-  - python3 --version
-  - python3 -m pip install --upgrade pip
+  - sudo apt-get install python3.8
+  - python3.8 --version
+  - python3.8 -m pip install --upgrade pip
   - openssl aes-256-cbc -K $encrypted_9f3b5599b056_key -iv $encrypted_9f3b5599b056_iv -in service-account.json.enc -out service-account.json -d
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc
