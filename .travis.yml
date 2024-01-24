@@ -5,7 +5,7 @@ env:
   global:
     - SHA=$(git rev-parse HEAD)
     - CLOUDSDK_CORE_DISABLE_PROMPTS=1
-    - CLOUDSDK_PYTHON=/usr/local/bin/python3.10
+python: 3.10
 
 before_install:
  
